@@ -1,5 +1,6 @@
-﻿using Exiled.Events.EventArgs.Player;
+using Exiled.Events.EventArgs.Player;
 using UnityEngine;
+using System.Linq;
 
 namespace RPSize
 {
@@ -7,12 +8,7 @@ namespace RPSize
     {
         public void OnPlayerSpawned(SpawnedEventArgs ev)
         {
-            float[] sizes = new float[]
-            {
-                Plugin.Instance.Config.Size1,
-                Plugin.Instance.Config.Size2,
-                Plugin.Instance.Config.Size3
-            };
+            float[] sizes = Plugin.Instance.Config.Size.ToArray();
 
             int index = Plugin.Instance.RNG.Next(sizes.Length);
             float selectedSize = sizes[index];
