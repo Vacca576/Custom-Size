@@ -14,9 +14,9 @@ namespace RPSize
 
         [Description("List of RP Size")]
         public List<float> Size { get; private set; } = new()
-{
-    1f,
-    1.2f,
-};
+        {
+          1f,
+          1.2f,
+        };
     }
 }
