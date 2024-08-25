@@ -1,6 +1,8 @@
 using Exiled.Events.EventArgs.Player;
 using UnityEngine;
 using System.Linq;
+using Exiled.API.Enums;
+
 
 namespace RPSize
 {
@@ -8,9 +10,10 @@ namespace RPSize
     {
         public void OnPlayerSpawned(SpawnedEventArgs ev)
         {
+            if (ev.Player.Role.Side == Side.Scp) return;
             float[] sizes = Plugin.Instance.Config.Size.ToArray();
 
-            int index = Plugin.Instance.RNG.Next(sizes.Length);
+            int index = UnityEngine.Random.Range(0, sizes.Length);
             float selectedSize = sizes[index];
 
             ev.Player.Scale = new Vector3(selectedSize, selectedSize, selectedSize);
