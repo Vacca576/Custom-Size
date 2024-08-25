@@ -1,7 +1,8 @@
-﻿using System;
+using System;
 using Exiled.API.Features;
 using Exiled.Events;
 using Exiled.Events.Features;
+using UnityEngine;
 
 namespace RPSize
 {
@@ -9,12 +10,12 @@ namespace RPSize
     {
         public override string Name => "RPSize";
         public override string Author => "Vacca";
-        public override Version Version => new Version(1, 0, 0);
-        public override Version RequiredExiledVersion => new Version(8, 11, 0);
+        public override string Prefix => "RPSize";
+        public override Version Version => new Version(1, 0, 1);
+        public override Version RequiredExiledVersion => new Version(8, 9, 11);
 
         public static Plugin Instance;
         public EventHandlers eventHandlers;
-        public Random RNG = new Random();
 
         public override void OnEnabled()
         {
